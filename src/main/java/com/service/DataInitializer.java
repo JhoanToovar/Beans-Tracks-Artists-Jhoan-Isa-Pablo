@@ -36,8 +36,8 @@ public class DataInitializer {
                     break;
                 }
                 Track track = tracks.get(trackIndex);
-                artist.addTrack(track);
-                track.addArtist(artist);
+                artist.addTrackId(track.getId());
+                track.addArtistId(artist.getId());
             }
         }
     }

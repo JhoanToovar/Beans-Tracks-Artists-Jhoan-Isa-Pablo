@@ -9,8 +9,7 @@ public class Track {
     private String genre;
     private String duration;
     private String albumTitle;
-    private List<Artist> artists = new ArrayList<>();
-
+    private List<Integer> artistIds = new ArrayList<>();
 
     public Track() {}
 
@@ -62,15 +61,15 @@ public class Track {
         this.duration = duration;
     }
 
-    public List<Artist> getArtists() {
-        return artists;
+    public List<Integer> getArtistIds() {
+        return artistIds;
     }
 
-    public void setArtists(List<Artist> artists) {
-        this.artists = artists;
+    public void addArtistId(int artistId) {
+        artistIds.add(artistId);
     }
 
-    public void addArtist(Artist artist) {
-        artists.add(artist);
+    public void removeArtistId(int artistId) {
+        artistIds.remove(Integer.valueOf(artistId));
     }
 }

@@ -38,6 +38,11 @@ public class TrackRepositoryImpl implements ITrackRepository {
         return tracks.remove(trackId);
     }
 
+    @Override
+    public Track findById(int id) {
+        return tracks.get(id);
+    }
+
     @PostConstruct
     private void initialize() {
         // Eladio Carrión

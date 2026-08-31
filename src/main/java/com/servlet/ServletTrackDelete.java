@@ -34,7 +34,7 @@ public class ServletTrackDelete extends HttpServlet {
 
         resp.getWriter().println("<ul>");
         for (Track track : trackService.getAllTracks()) {
-            String artistNames = track.getArtists().stream()
+            String artistNames = trackService.getArtistsByTrack(track.getId()).stream()
                     .map(Artist::getName)
                     .collect(Collectors.joining(", "));
             resp.getWriter().println("<li>id " + track.getId() + " - " + track.getTitle() + " - "

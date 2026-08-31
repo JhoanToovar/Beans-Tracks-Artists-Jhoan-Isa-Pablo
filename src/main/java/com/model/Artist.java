@@ -7,8 +7,7 @@ public class Artist {
     private int id;
     private String name;
     private String nationality;
-    private List<Track> tracks = new ArrayList<>();
-
+    private List<Integer> trackIds = new ArrayList<>();
 
     public Artist() {
 
@@ -44,16 +43,15 @@ public class Artist {
         this.nationality = nationality;
     }
 
-    public List<Track> getTracks() {
-        return tracks;
+    public List<Integer> getTrackIds() {
+        return trackIds;
     }
 
-    public void setTracks(List<Track> tracks) {
-        this.tracks = tracks;
+    public void addTrackId(int trackId) {
+        trackIds.add(trackId);
     }
 
-    public void addTrack(Track track) {
-        tracks.add(track);
+    public void removeTrackId(int trackId) {
+        trackIds.remove(Integer.valueOf(trackId));
     }
-
 }

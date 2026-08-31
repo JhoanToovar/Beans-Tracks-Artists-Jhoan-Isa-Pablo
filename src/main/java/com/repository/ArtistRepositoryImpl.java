@@ -9,7 +9,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class ArtistRepositoryImpl implements IArtistRepository {
 
     private HashMap<Integer, Artist> artists;
@@ -53,7 +52,6 @@ public class ArtistRepositoryImpl implements IArtistRepository {
         return artists.remove(id);
     }
 
-    @PostConstruct
     private void initialize() {
         seedArtist("Eladio Carrion", "Puerto Rico");
         seedArtist("Caifanes", "México");

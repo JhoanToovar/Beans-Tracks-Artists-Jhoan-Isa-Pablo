@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Repository
 public class TrackRepositoryImpl implements ITrackRepository {
 
     private HashMap<Integer, Track> tracks;
@@ -38,7 +37,6 @@ public class TrackRepositoryImpl implements ITrackRepository {
         return tracks.remove(trackId);
     }
 
-    @PostConstruct
     private void initialize() {
         // Eladio Carrión
         seedTrack("Sauce", "Trap Latino", "3:15", "Sauce Boyz");

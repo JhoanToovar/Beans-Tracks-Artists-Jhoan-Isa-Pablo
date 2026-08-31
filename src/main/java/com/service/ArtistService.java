@@ -12,15 +12,11 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.List;
 
-@Service
 public class ArtistService implements IArtistService {
 
-    @Autowired
     private ITrackRepository trackRepository;
-    @Autowired
     private IArtistRepository artistRepository;
 
-    @Autowired
     public ArtistService(IArtistRepository artistRepository, ITrackRepository trackRepository) {
         this.artistRepository = artistRepository;
         this.trackRepository = trackRepository;

@@ -24,4 +24,11 @@
         <constructor-arg ref="artistRepository"/>
     </bean>
 
+    <!-- Inicializador de datos -->
+    <bean id="dataInitializer" class="com.service.DataInitializer"
+          init-method="linkArtistsAndTracks">
+        <constructor-arg ref="artistService"/>
+        <constructor-arg ref="trackService"/>
+    </bean>
+
 </beans>

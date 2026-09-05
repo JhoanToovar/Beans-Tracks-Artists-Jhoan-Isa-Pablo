@@ -1,5 +1,6 @@
 package com.service;
 
+import com.model.Artist;
 import com.model.Track;
 
 import java.util.Collection;
@@ -9,4 +10,5 @@ public interface ITrackService {
     Collection<Track> getAllTracks();
     Track createTrack(Track track, List<Integer> artistIds);
     boolean deleteTrack(int trackId);
+    List<Artist> getArtistsByTrack(int trackId);
 }

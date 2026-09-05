@@ -8,4 +8,5 @@ public interface ITrackRepository {
     Collection<Track> getTracks();
     Track createTrack(Track track);
     Track deleteTrack(int trackId);
+    Track findById(int id);
 }

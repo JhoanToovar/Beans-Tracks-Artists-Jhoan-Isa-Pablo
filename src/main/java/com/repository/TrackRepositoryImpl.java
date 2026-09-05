@@ -37,6 +37,11 @@ public class TrackRepositoryImpl implements ITrackRepository {
         return tracks.remove(trackId);
     }
 
+    @Override
+    public Track findById(int id) {
+        return tracks.get(id);
+    }
+
     private void initialize() {
         // Eladio Carrión
         seedTrack("Sauce", "Trap Latino", "3:15", "Sauce Boyz");

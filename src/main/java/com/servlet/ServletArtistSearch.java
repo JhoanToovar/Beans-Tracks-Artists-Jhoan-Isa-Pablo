@@ -42,7 +42,7 @@ public class ServletArtistSearch extends HttpServlet {
                 resp.getWriter().println("<h2>" + artist.getName() + " (" + artist.getNationality()
                         + ") - id " + artist.getId() + "</h2>");
                 resp.getWriter().println("<ul>");
-                for (Track track : artist.getTracks()) {
+                for (Track track : artistService.getTracksByArtist(artist.getId())) {
                     resp.getWriter().println("<li>" + track.getTitle() + " - " + track.getGenre()
                             + " - " + track.getDuration() + " - " + track.getAlbumTitle() + "</li>");
                 }

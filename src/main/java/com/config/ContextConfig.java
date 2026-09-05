@@ -5,6 +5,7 @@ import com.repository.IArtistRepository;
 import com.repository.ITrackRepository;
 import com.repository.TrackRepositoryImpl;
 import com.service.ArtistService;
+import com.service.DataInitializer;
 import com.service.IArtistService;
 import com.service.ITrackService;
 import com.service.TrackService;
@@ -34,5 +35,11 @@ public class ContextConfig {
     @Bean
     public ITrackService trackService(ITrackRepository trackRepository, IArtistRepository artistRepository) {
         return new TrackService(trackRepository, artistRepository);
+    }
+
+    // Data initializer
+    @Bean(initMethod = "linkArtistsAndTracks")
+    public DataInitializer dataInitializer(IArtistService artistService, ITrackService trackService) {
+        return new DataInitializer(artistService, trackService);
     }
 }
